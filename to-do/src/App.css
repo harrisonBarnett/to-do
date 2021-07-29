@@ -62,6 +62,7 @@ body {
 }
 .group-bar li:hover {
     color: white;
+    cursor: pointer;
     background: var(--accent-color-900);
 }
 .group-bar-tab-active {
@@ -82,13 +83,6 @@ body {
     margin: 20px;
     padding: 0;
     list-style: none;
-}
-.add-task-button {
-    height: 40px;
-    width: 40px;
-    margin: 0;
-    border-radius: 50%;
-    background: var(--primary-color-100);
 }
 .sidebar-item {
     margin: 1em 0;
@@ -116,8 +110,18 @@ body {
     width: 400px;
 
     background: white;
+    cursor: default;
 
     box-shadow: 1px 1px 0 300vh rgba(0,0,0, .5);
     border: 1px solid pink;
+}
+.add-group-window-content {
+    color: black;
+}
+.add-group-window-content button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
 }
 /* =============================================== */

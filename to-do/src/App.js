@@ -31,22 +31,32 @@ class App extends React.Component {
         date: "7/30/21",
         group: "school"},
         {id: 3,
-        content: "ipsum dolor sin amet",
+        content: "ipsum dolor sit amet",
         date: "7/27/33",
         group: "work"},
-
       ],
 
     };
+    this.swapTab = this.swapTab.bind(this);
   };
 
-  
+  swapTab(tabName) {    
+    this.setState({
+      page: tabName
+    }, () => {
+      console.log(this.state.page);
+    });
+  }
+
+
   
   render() {
     return (
       <>
         <Header/>
-        <GroupBar groups={this.state.groups}/>
+        <GroupBar 
+        swapTab={this.swapTab}
+        groups={this.state.groups}/>
         <Sidebar 
         tasks={this.state.tasks}
         page={this.state.page}/>

@@ -7,7 +7,24 @@ class GroupBar extends React.Component {
 
     render() {
         return (
-            <h1>GroupBar</h1>
+            <div
+            className="group-bar"
+            id="group-bar">
+                <ul>
+                    <li>recent</li>
+
+                    {this.props.groups.map(group => 
+                        
+                            <li
+                            className="group-bar-tab"
+                            key={"group-bar-tab-"+group.id}>
+                                {group.name}
+                            </li>
+                        
+                        )}
+                    <li>+ add</li>
+                </ul>
+            </div>
         )
     }
 }

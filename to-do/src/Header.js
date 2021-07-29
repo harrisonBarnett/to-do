@@ -7,8 +7,10 @@ class Header extends React.Component {
             <div
             className="header"
             id="header">
-                <h1 className="title" id="title">doStuff</h1>
-                <p className="subtitle" id="subtitle">get your shit together</p>
+                <div className="title-container">
+                    <h1 className="title" id="title">doStuff</h1>
+                    <p className="subtitle" id="subtitle">get your shit together</p>
+                </div>
             </div>
         )
     }

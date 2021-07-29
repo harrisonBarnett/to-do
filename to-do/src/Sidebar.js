@@ -1,4 +1,5 @@
 import React from 'react';
+import AddTaskModal from './AddTaskModal';
 
 const Sidebar = ({tasks, page}) => {
     if(page === "recent") {
@@ -7,7 +8,9 @@ const Sidebar = ({tasks, page}) => {
             className="task-sidebar"
             id="task-sidebar">
                 <ul>
-                    <li className="sidebar-add-item">+ add</li>
+                    <li>
+                        <AddTaskModal/>
+                    </li>
 
                     {tasks.map(task => 
                         

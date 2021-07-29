@@ -46,15 +46,39 @@ body {
     padding: 0;
     list-style: none;
 }
-.sidebar-add-item {
-    border: 1px solid black;
+.add-task-button {
     height: 40px;
     width: 40px;
     border-radius: 50%;
+    border: 1px solid green;
 }
 .sidebar-item {
     margin: 1em 0;
 
     border: 1px solid red;
+}
+/* =============================================== */
+
+/* MODAL STYLES=================================== */
+.display-block {
+    display: block;
+}
+.display-none {
+    display: none;
+}
+.add-task-window {
+    position: fixed;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 200px;
+    width: 400px;
+
+    background: white;
+
+    box-shadow: 1px 1px 0 300vh rgba(0,0,0, .5);
+    border: 1px solid pink;
 }
 /* =============================================== */

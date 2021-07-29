@@ -1,13 +1,13 @@
-const AddTaskWindow = ({closeBtn, show}) => {
+const AddGroupWindow = ({closeBtn, show}) => {
 
-    const modalClassName = show ? "add-task-window display-block" : "add-task-window display-none";
+    const modalClassName = show ? "add-group-window display-block" : "add-group-window display-none";
     return (
         <div
         className={modalClassName}>
-            <div className="add-task-window-content">
+            <div className="add-group-window-content">
                 <button
                 type="button"
-                id="add-task-close-btn"
+                id="add-group-close-btn"
                 onClick={closeBtn}>
                     x
                 </button>
@@ -18,4 +18,4 @@ const AddTaskWindow = ({closeBtn, show}) => {
     )
 }
 
-export default AddTaskWindow;
+export default AddGroupWindow;

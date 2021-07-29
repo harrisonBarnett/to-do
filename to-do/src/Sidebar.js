@@ -1,5 +1,4 @@
 import React from 'react';
-import AddTaskModal from './AddTaskModal';
 
 const Sidebar = ({tasks, page}) => {
     if(page === "recent") {
@@ -8,12 +7,7 @@ const Sidebar = ({tasks, page}) => {
             className="task-sidebar"
             id="task-sidebar">
                 <ul>
-                    <li>
-                        <AddTaskModal/>
-                    </li>
-
                     {tasks.map(task => 
-                        
                         <li
                         className="sidebar-item"
                         key={"sidebar-item-"+task.id}>
@@ -21,7 +15,6 @@ const Sidebar = ({tasks, page}) => {
                             <p id="sidebar-item-content">{task.content}</p>
                             <p id="sidebar-item-group">{task.group}</p>
                         </li>
-
                     )}                   
                 </ul>
             </div>
@@ -32,12 +25,7 @@ const Sidebar = ({tasks, page}) => {
             className="task-sidebar"
             id="task-sidebar">
                 <ul>
-                    <li>
-                        <AddTaskModal/>
-                    </li>
-
                     {tasks.map(task => 
-                        
                         <li
                         className="sidebar-item"
                         key={"sidebar-item-"+task.id}>
@@ -45,10 +33,8 @@ const Sidebar = ({tasks, page}) => {
                             <p id="sidebar-item-content">{task.content}</p>
                             <p id="sidebar-item-group">{task.group}</p>
                         </li>
-
                     )}                
                 </ul>
-
             </div>
         )
     }

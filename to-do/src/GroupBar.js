@@ -1,4 +1,5 @@
 import React from 'react';
+import AddGroupModal from './AddGroupModal';
 
 class GroupBar extends React.Component {
     render() {
@@ -25,7 +26,7 @@ class GroupBar extends React.Component {
                             </li>
                         
                         )}
-                    <li>+ add</li>
+                    <li><AddGroupModal/></li>
                 </ul>
             </div>
         )

@@ -1,7 +1,7 @@
-import AddTaskWindow from './AddTaskWindow';
+import AddGroupWindow from './AddGroupWindow';
 import React from 'react';
 
-class AddTaskModal extends React.Component {
+class AddGroupModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,13 +19,13 @@ class AddTaskModal extends React.Component {
 
     render() {
         return(
-            <div className="add-task-modal-container">
+            <div className="add-group-modal-container">
                 <div
-                className="add-task-button"
+                className="add-group-button"
                 onClick={this.showModal}>
                     + add
                 </div>
-                <AddTaskWindow 
+                <AddGroupWindow 
                 show={this.state.show}
                 closeBtn={this.hideModal}/>
             </div>
@@ -34,4 +34,4 @@ class AddTaskModal extends React.Component {
 
 }
 
-export default AddTaskModal;
+export default AddGroupModal;

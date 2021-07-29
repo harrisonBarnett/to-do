@@ -19,7 +19,7 @@ class GroupBar extends React.Component {
                         
                             <li
                             className="group-bar-tab"
-                            id={"group-bar-tab-"+group.id}
+                            id={"group-bar-tab-"+group.name}
                             key={"group-bar-tab-"+group.id}
                             onClick= {() => this.props.swapTab(group.name)}>
                                 {group.name}

@@ -58,7 +58,15 @@ body {
     margin: 0 2px;
     background: var(--accent-color-100);
 
-    border: 1px dotted blue;
+    /* border: 1px dotted blue; */
+}
+.group-bar li:hover {
+    color: white;
+    background: var(--accent-color-900);
+}
+.group-bar-tab-active {
+    color: white;
+    background: var(--accent-color-900) !important;
 }
 /* =============================================== */
 /* SIDEBAR STYLES ================================ */

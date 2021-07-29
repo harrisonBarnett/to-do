@@ -40,7 +40,12 @@ class App extends React.Component {
     this.swapTab = this.swapTab.bind(this);
   };
 
-  swapTab(tabName) {    
+  swapTab(tabName) {   
+    const prevTab = document.getElementsByClassName("group-bar-tab-active")[0];
+    prevTab.classList.remove("group-bar-tab-active");
+    
+    const nextTab = document.getElementById("group-bar-tab-" + tabName);
+    nextTab.classList.add("group-bar-tab-active");
     this.setState({
       page: tabName
     }, () => {

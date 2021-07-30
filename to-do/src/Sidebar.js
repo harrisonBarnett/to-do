@@ -26,7 +26,7 @@ const Sidebar = ({tasks, page}) => {
             id="task-sidebar">
                 <ul>
                     
-                    {tasks.filter(task => task.group == page).map(filteredTask =>
+                    {tasks.filter(task => task.group === page).map(filteredTask =>
                             <li
                             className="sidebar-item"
                             key={"sidebar-item-"+filteredTask.id}>

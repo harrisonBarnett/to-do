@@ -18,7 +18,7 @@ body {
 }
 /* HEADER STYLES================================== */
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     margin: 0;
@@ -44,21 +44,28 @@ body {
 /* GROUP BAR STYLES ============================== */
 .group-bar {
     position: relative;
+    height: 40px;
     top: 120px;
     /* border: 1px solid blue; */
 }
 .group-bar ul {
-    margin: 0 20px;
+    height: 40px;
+    margin: 0 0 0 20px;
     padding: 0;
     list-style: none;
     display: flex;
 }
 .group-bar li{
-    padding: 1em 2em;
+    padding: 0 1em;
     margin: 0 2px;
+    display: flex;
+    align-items: center;
     background: var(--accent-color-100);
 
     /* border: 1px dotted blue; */
+}
+#group-bar-tab-recent {
+    margin-left: 0;
 }
 .group-bar li:hover {
     color: white;
@@ -72,8 +79,8 @@ body {
 /* =============================================== */
 /* SIDEBAR STYLES ================================ */
 .task-sidebar {
-    position: relative;
-    top: 120px;
+    position: fixed;
+    top: 160px;
     width: 300px;
     height: 100vh;
 
@@ -92,6 +99,18 @@ body {
 }
 /* =============================================== */
 
+/* MAIN CONTENT STYLES =========================== */
+.content-container {
+    position: fixed;
+    top: 180px;
+    left: 300px;
+    right: 20px;
+    
+
+    background: red;
+}
+/* =============================================== */
+
 /* MODAL STYLES=================================== */
 .display-block {
     display: block;
@@ -99,6 +118,7 @@ body {
 .display-none {
     display: none;
 }
+/* add group modals */
 .add-group-window {
     position: fixed;
     z-index: 3;

@@ -3,12 +3,14 @@ import './App.css';
 import Header from './Header';
 import GroupBar from './GroupBar';
 import Sidebar from './Sidebar';
+import Content from './Content';
 
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      id: 6,
 
       page: "recent",
 
@@ -38,6 +40,7 @@ class App extends React.Component {
 
     };
     this.swapTab = this.swapTab.bind(this);
+    this.addTask = this.addTask.bind(this);
   };
 
   swapTab(tabName) {   
@@ -53,7 +56,14 @@ class App extends React.Component {
     });
   }
 
+  addTask(task) {
+    let id = this.state.id;
+    task.id = id;
 
+    this.state.tasks.concat(task);
+
+    this.setState({ id: id++ });
+  }
   
   render() {
     return (
@@ -65,6 +75,8 @@ class App extends React.Component {
         <Sidebar 
         tasks={this.state.tasks}
         page={this.state.page}/>
+        <Content 
+        addTask={this.addTask}/>
       </>
     );
   };

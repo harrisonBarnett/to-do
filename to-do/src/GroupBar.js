@@ -29,8 +29,8 @@ class GroupBar extends React.Component {
                     <li><AddGroupModal/></li>
                 </ul>
             </div>
-        )
-    }
+        );
+    };
 }
 
 export default GroupBar;

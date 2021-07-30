@@ -52,7 +52,7 @@ class App extends React.Component {
     this.setState({
       page: tabName
     }, () => {
-      console.log(this.state.page);
+      return;
     });
   }
 
@@ -70,8 +70,6 @@ class App extends React.Component {
 
     newID++;
     this.setState({ id: newID});
-    console.log(this.state.id);
-    console.log(this.state.tasks);
   }
   
   render() {
@@ -85,7 +83,8 @@ class App extends React.Component {
         tasks={this.state.tasks}
         page={this.state.page}/>
         <Content 
-        addTask={this.addTask}/>
+        addTask={this.addTask}
+        groups={this.state.groups}/>
       </>
     );
   };

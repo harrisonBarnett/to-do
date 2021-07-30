@@ -41,12 +41,23 @@ class Content extends React.Component {
                 <select 
                 name="add-task-groups-dropdown" 
                 onChange={this.handleGroup}>
-                    <option value="work">Work</option>
-                    <option value="school">School</option>
+                    <option 
+                    disabled
+                    selected={true}> 
+                    -- select an option -- </option>
+
+                    {this.props.groups.map(group => 
+                        <option
+                        value={group.name}
+                        key={group.id}>
+                        {group.name}
+                        </option>    
+                        )}
+
                 </select>
 
                 <button onClick={this.handleTaskSubmit}>
-                    click me
+                    submit
                 </button>
             </div>
         );

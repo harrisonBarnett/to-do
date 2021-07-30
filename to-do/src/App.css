@@ -121,22 +121,23 @@ body {
 /* add group modals */
 .add-group-window {
     position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    cursor: default;
+    background: rgba(25, 25, 25, .5);
+}
+.add-group-window-content {
+    position: fixed;
     z-index: 3;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    height: 200px;
-    width: 400px;
-
-    background: white;
-    cursor: default;
-
-    box-shadow: 1px 1px 0 300vh rgba(0,0,0, .5);
-    border: 1px solid pink;
-}
-.add-group-window-content {
+    background: pink;
     color: black;
+    border: 1px dotted red;
 }
 .add-group-window-content button {
     position: absolute;

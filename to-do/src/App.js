@@ -56,13 +56,22 @@ class App extends React.Component {
     });
   }
 
-  addTask(task) {
-    let id = this.state.id;
-    task.id = id;
+  addTask(id, content, date, group) {
+    let newID = this.state.id;
 
-    this.state.tasks.concat(task);
+    this.setState({
+      tasks: this.state.tasks.concat({
+        id: newID,
+        content: content,
+        date: date,
+        group: group
+      })
+    });
 
-    this.setState({ id: id++ });
+    newID++;
+    this.setState({ id: newID});
+    console.log(this.state.id);
+    console.log(this.state.tasks);
   }
   
   render() {

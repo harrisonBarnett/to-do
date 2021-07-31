@@ -5,9 +5,10 @@ class Content extends React.Component {
         super(props);
         this.state = {
             id: "",
-            content: "eat a corndog",
-            date: "7/30/21",
-            group: "work"
+            content: "",
+            date: "",
+            group: "",
+            color: ""
         }      
         this.handleTaskSubmit = this.handleTaskSubmit.bind(this);
         this.handleContent = this.handleContent.bind(this);
@@ -21,11 +22,14 @@ class Content extends React.Component {
         this.setState({date: event.target.value});
     };
     handleGroup(event) {
-        this.setState({group: event.target.value});
+        this.setState({color: event.target.value, 
+            group: event.target.options[event.target.selectedIndex].text
+        });
     };
+
     handleTaskSubmit(event) {
         event.preventDefault();
-        this.props.addTask(this.state.id, this.state.content, this.state.date, this.state.group);
+        this.props.addTask(this.state.id, this.state.content, this.state.date, this.state.group, this.state.color);
     }
     render() {
         return (
@@ -44,11 +48,13 @@ class Content extends React.Component {
                     <option 
                     disabled
                     selected={true}> 
-                    -- select an option -- </option>
+                    -- select an option -- 
+                    </option>
 
                     {this.props.groups.map(group => 
                         <option
-                        value={group.name}
+                        // color is passed as value of each option
+                        value={group.color}
                         key={group.id}>
                         {group.name}
                         </option>    

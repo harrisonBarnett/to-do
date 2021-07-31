@@ -27,15 +27,18 @@ class App extends React.Component {
         {id: 1,
         content: "pick up drycleaning",
         date: "7/27/21",
-        group: "work"},
+        group: "work",
+        color: "red"},
         {id: 2,
         content: "eat a bug",
         date: "7/30/21",
-        group: "school"},
+        group: "school",
+        color: "green"},
         {id: 3,
         content: "ipsum dolor sit amet",
         date: "7/27/33",
-        group: "work"},
+        group: "work",
+        color: "red"},
       ],
 
     };
@@ -56,7 +59,7 @@ class App extends React.Component {
     });
   }
 
-  addTask(id, content, date, group) {
+  addTask(id, content, date, group, color) {
     let newID = this.state.id;
 
     this.setState({
@@ -64,7 +67,8 @@ class App extends React.Component {
         id: newID,
         content: content,
         date: date,
-        group: group
+        group: group,
+        color: color
       })
     });
 

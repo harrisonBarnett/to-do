@@ -91,12 +91,27 @@ body {
     padding: 0;
     list-style: none;
 }
+/* sidebar item styles */
 .sidebar-item {
     margin: 1em 0;
+    display: flex;
     background: var(--primary-color-100);
 
     /* border: 1px solid red; */
 }
+#sidebar-item-accent {
+    width: 15px;
+}
+#sidebar-item-content-container {
+    margin-left: 10px;
+}
+#sidebar-item-control {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: auto;
+}
+
 /* =============================================== */
 
 /* MAIN CONTENT STYLES =========================== */

@@ -11,9 +11,20 @@ const Sidebar = ({tasks, page}) => {
                         <li
                         className="sidebar-item"
                         key={"sidebar-item-"+task.id}>
-                            <p id="sidebar-item-date">{task.date}</p>
-                            <p id="sidebar-item-content">{task.content}</p>
-                            <p id="sidebar-item-group">{task.group}</p>
+                            <div
+                            id="sidebar-item-accent"
+                            style={{background: task.color}}></div>
+
+                            <div id="sidebar-item-content-container">
+                                <p id="sidebar-item-date">{task.date}</p>
+                                <p id="sidebar-item-content">{task.content}</p>
+                                <p id="sidebar-item-group">{task.group}</p>
+                            </div>
+
+                            <div id="sidebar-item-control">
+                                <button>x</button>
+                                <button>[edit]</button>
+                            </div>
                         </li>
                     )}                   
                 </ul>
@@ -27,13 +38,24 @@ const Sidebar = ({tasks, page}) => {
                 <ul>
                     
                     {tasks.filter(task => task.group === page).map(filteredTask =>
-                            <li
-                            className="sidebar-item"
-                            key={"sidebar-item-"+filteredTask.id}>
+                        <li
+                        className="sidebar-item"
+                        key={"sidebar-item-"+filteredTask.id}>
+                            <div
+                            id="sidebar-item-accent"
+                            style={{background: filteredTask.color}}></div>
+                            
+                            <div id="sidebar-item-content-container">
                                 <p id="sidebar-item-date">{filteredTask.date}</p>
                                 <p id="sidebar-item-content">{filteredTask.content}</p>
                                 <p id="sidebar-item-group">{filteredTask.group}</p>
-                            </li>
+                            </div>
+
+                            <div id="sidebar-item-control">
+                                <button>x</button>
+                                <button>[edit]</button>
+                            </div>
+                        </li>
                         )}              
                 </ul>
             </div>

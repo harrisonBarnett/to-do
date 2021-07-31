@@ -11,7 +11,7 @@ const AddGroupWindow = ({closeBtn, show}) => {
                 onClick={closeBtn}>
                     x
                 </button>
-                <p>welcome to the add task window</p>
+                <p>welcome to the add group window</p>
             </div>
 
         </div>

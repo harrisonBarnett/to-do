@@ -34,37 +34,53 @@ class Content extends React.Component {
     render() {
         return (
             <div className="content-container">
-                <input type="text"
-                onChange={this.handleContent}>
+                <div id="add-task-form">
+                    <h2>hold that thought</h2>
+                    
+                    <div id="task-input-container">
+                        <label for="task-input">task:</label>
+                        <input 
+                        type="text"
+                        name="task-input"
+                        onChange={this.handleContent}>
+                        </input>
+                    </div>
 
-                </input>
-                <input type="date"
-                onChange={this.handleDate}>
-                </input>
+                    <div id="date-input-container">
+                        <label for="date-input">due: </label>
+                        <input 
+                        type="date"
+                        name="date-input"
+                        onChange={this.handleDate}>
+                        </input>
+                    </div>
 
-                <select 
-                name="add-task-groups-dropdown" 
-                onChange={this.handleGroup}>
-                    <option 
-                    disabled
-                    selected={true}> 
-                    -- select an option -- 
-                    </option>
+                    <div id="group-input-container">
+                        <label for="add-task-groups-dropdown">group: </label>
+                        <select 
+                        name="add-task-groups-dropdown" 
+                        onChange={this.handleGroup}>
+                            <option 
+                            disabled
+                            selected={true}> 
+                            -- select an option -- 
+                            </option>
 
-                    {this.props.groups.map(group => 
-                        <option
-                        // color is passed as value of each option
-                        value={group.color}
-                        key={group.id}>
-                        {group.name}
-                        </option>    
-                        )}
+                            {this.props.groups.map(group => 
+                                <option
+                                // color is passed as value of each option
+                                value={group.color}
+                                key={group.id}>
+                                {group.name}
+                                </option>    
+                                )}
 
-                </select>
-
-                <button onClick={this.handleTaskSubmit}>
-                    submit
-                </button>
+                        </select>
+                    </div>            
+                    <button onClick={this.handleTaskSubmit}>
+                        submit
+                    </button>
+                </div>
             </div>
         );
     };

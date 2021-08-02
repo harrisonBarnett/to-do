@@ -121,7 +121,45 @@ body {
     left: 300px;
     right: 20px;
 
-    background: red;
+    display: flex;
+    flex-direction: column;
+
+    height: 300px;
+
+    /* border: 1px dotted red; */
+}
+#add-task-form {
+    width: 300px;
+    height: 180px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* border: 1px dotted green; */
+}
+#add-task-form h2 {
+    margin: 0;
+    padding: 0;
+}
+#add-task-form label {
+    margin-right: .25em;
+}
+#add-task-form input,
+#add-task-form select {
+    outline: none;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom: 1px solid black;
+}
+#add-task-form button {
+    width: 75px;
+    padding: .5em 1em;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 /* =============================================== */
 

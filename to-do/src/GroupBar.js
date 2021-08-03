@@ -26,7 +26,7 @@ class GroupBar extends React.Component {
                             </li>
                         
                         )}
-                    <li><AddGroupModal/></li>
+                    <li><AddGroupModal addGroup={this.props.addGroup}/></li>
                 </ul>
             </div>
         );

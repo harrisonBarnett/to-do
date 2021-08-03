@@ -27,7 +27,8 @@ class AddGroupModal extends React.Component {
                 </div>
                 <AddGroupWindow 
                 show={this.state.show}
-                closeBtn={this.hideModal}/>
+                closeBtn={this.hideModal}
+                addGroup={this.props.addGroup}/>
             </div>
         )
     }

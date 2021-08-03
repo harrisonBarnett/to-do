@@ -4,21 +4,33 @@ class AddGroupWindow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            id: "",
+            name: "",
+            color: ""
         }
+        this.handleGroupSubmit = this.handleGroupSubmit.bind(this);
+        this.handleGroupName = this.handleGroupName.bind(this);
+        this.handleGroupColor = this.handleGroupColor.bind(this);
     };
+    handleGroupName(event) {
+        this.setState({name: event.target.value});
+    };
+    handleGroupColor(event) {
+        this.setState({color: event.target.value});
+    };
+    handleGroupSubmit(event) {
+        event.preventDefault();
+        this.props.addGroup(this.state.id, this.state.name, this.state.color);
+        this.props.closeBtn();
+    }
 
     render() {
-        const { show, closeBtn } = this.props;
-
-        const modalClassName = show ? "add-group-window display-block" : "add-group-window display-none";
+        const modalClassName = this.props.show ? "add-group-window display-block" : "add-group-window display-none";
 
         return (
             <div
-            className={modalClassName}
-            onClick={closeBtn}>
-                <div className="add-group-window-content"
-                onClick="none">
+            className={modalClassName}>
+                <div className="add-group-window-content">
     
                     <div id="add-group-form">
                         <h2>form a group</h2>
@@ -26,14 +38,16 @@ class AddGroupWindow extends React.Component {
                             <label htmlFor="group-input">group: 
                                 <input 
                                 type="text"
-                                name="group-input"/>
+                                name="group-input"
+                                onChange={this.handleGroupName}/>
                             </label>
                         </div>
                         <div id="color-input-container">
                             <label htmlFor="color-input">color: 
                                 <input 
                                 type="color"
-                                name="color-input"/>
+                                name="color-input"
+                                onChange={this.handleGroupColor}/>
                             </label>
                         </div>  
                     </div>
@@ -42,14 +56,14 @@ class AddGroupWindow extends React.Component {
                         <button
                         type="button"
                         id="add-group-close-btn"
-                        onClick={closeBtn}>
+                        onClick={this.props.closeBtn}>
                             x
                         </button>
     
                         <button
                         type="button"
                         id="add-group-submit-button"
-                        onClick={() => closeBtn}>
+                        onClick={this.handleGroupSubmit}>
                             submit
                         </button>
                     </div>

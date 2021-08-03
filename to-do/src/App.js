@@ -44,6 +44,7 @@ class App extends React.Component {
     };
     this.swapTab = this.swapTab.bind(this);
     this.addTask = this.addTask.bind(this);
+    this.addGroup = this.addGroup.bind(this);
   };
 
   swapTab(tabName) {   
@@ -75,6 +76,22 @@ class App extends React.Component {
     newID++;
     this.setState({ id: newID});
   }
+
+  addGroup(id, name, color) {
+    let newID = this.state.id;
+
+    this.setState({
+      groups: this.state.groups.concat({
+        id: newID,
+        name: name,
+        color: color
+      })
+    });
+
+    newID++;
+    this.setState({ id: newID});
+    console.log(this.state.groups);
+  }
   
   render() {
     return (
@@ -82,6 +99,7 @@ class App extends React.Component {
         <Header/>
         <GroupBar 
         swapTab={this.swapTab}
+        addGroup={this.addGroup}
         groups={this.state.groups}/>
         <Sidebar 
         tasks={this.state.tasks}

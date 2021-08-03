@@ -36,9 +36,9 @@ class Content extends React.Component {
             <div className="content-container">
                 <div id="add-task-form">
                     <h2>hold that thought</h2>
-                    
+
                     <div id="task-input-container">
-                        <label for="task-input">task: </label>
+                        <label htmlFor="task-input">task: </label>
                         <input 
                         type="text"
                         name="task-input"
@@ -47,7 +47,7 @@ class Content extends React.Component {
                     </div>
 
                     <div id="date-input-container">
-                        <label for="date-input">due: </label>
+                        <label htmlFor="date-input">due: </label>
                         <input 
                         type="date"
                         name="date-input"
@@ -56,7 +56,7 @@ class Content extends React.Component {
                     </div>
 
                     <div id="group-input-container">
-                        <label for="add-task-groups-dropdown">group: </label>
+                        <label htmlFor="add-task-groups-dropdown">group: </label>
                         <select 
                         name="add-task-groups-dropdown" 
                         onChange={this.handleGroup}>

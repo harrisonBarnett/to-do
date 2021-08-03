@@ -38,7 +38,7 @@ class Content extends React.Component {
                     <h2>hold that thought</h2>
                     
                     <div id="task-input-container">
-                        <label for="task-input">task:</label>
+                        <label for="task-input">task: </label>
                         <input 
                         type="text"
                         name="task-input"

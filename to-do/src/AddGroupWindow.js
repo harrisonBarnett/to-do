@@ -1,6 +1,9 @@
+import React from "react";
+
 const AddGroupWindow = ({closeBtn, show}) => {
 
     const modalClassName = show ? "add-group-window display-block" : "add-group-window display-none";
+
     return (
         <div
         className={modalClassName}
@@ -35,17 +38,14 @@ const AddGroupWindow = ({closeBtn, show}) => {
                     </button>
 
                     <button
-                        id="add-group-submit-button"
-                        onClick={closeBtn}>
+                    type="button"
+                    id="add-group-submit-button"
+                    onClick={closeBtn}>
                         submit
                     </button>
                 </div>
-
             </div>
-
-
         </div>
     )
 }
-
 export default AddGroupWindow;

@@ -14,18 +14,18 @@ const AddGroupWindow = ({closeBtn, show}) => {
                 <div id="add-group-form">
                     <h2>form a group</h2>
                     <div id="group-input-container">
-                        <label for="group-input">group: </label>
-                        <input 
-                        type="text"
-                        name="group-input">
-                        </input>
+                        <label htmlFor="group-input">group: 
+                            <input 
+                            type="text"
+                            name="group-input"/>
+                        </label>
                     </div>
                     <div id="color-input-container">
-                        <label for="color-input">color: </label>
-                        <input 
-                        type="color"
-                        name="color-input">
-                        </input>
+                        <label htmlFor="color-input">color: 
+                            <input 
+                            type="color"
+                            name="color-input"/>
+                        </label>
                     </div>  
                 </div>
 

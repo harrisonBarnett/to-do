@@ -30,6 +30,7 @@ class Content extends React.Component {
     handleTaskSubmit(event) {
         event.preventDefault();
         this.props.addTask(this.state.id, this.state.content, this.state.date, this.state.group, this.state.color);
+        this.setState({id: "", content: "", date: "", group: "", color: ""})
     }
     render() {
         return (
@@ -40,6 +41,7 @@ class Content extends React.Component {
                     <div id="task-input-container">
                         <label htmlFor="task-input">task: </label>
                         <input 
+                        value={this.state.content}
                         type="text"
                         name="task-input"
                         onChange={this.handleContent}>
@@ -49,6 +51,7 @@ class Content extends React.Component {
                     <div id="date-input-container">
                         <label htmlFor="date-input">due: </label>
                         <input 
+                        value={this.state.date}
                         type="date"
                         name="date-input"
                         onChange={this.handleDate}>
@@ -57,7 +60,7 @@ class Content extends React.Component {
 
                     <div id="group-input-container">
                         <label htmlFor="add-task-groups-dropdown">group: </label>
-                        <select 
+                        <select                         
                         name="add-task-groups-dropdown" 
                         onChange={this.handleGroup}>
                             <option 

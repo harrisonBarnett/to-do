@@ -18,9 +18,11 @@ class AddGroupWindow extends React.Component {
     handleGroupColor(event) {
         this.setState({color: event.target.value});
     };
+
     handleGroupSubmit(event) {
         event.preventDefault();
         this.props.addGroup(this.state.id, this.state.name, this.state.color);
+        this.setState({id: "", name: "", color: ""})
         this.props.closeBtn();
     }
 
@@ -36,7 +38,8 @@ class AddGroupWindow extends React.Component {
                         <h2>form a group</h2>
                         <div id="group-input-container">
                             <label htmlFor="group-input">group: 
-                                <input 
+                                <input
+                                value={this.state.name} 
                                 type="text"
                                 name="group-input"
                                 onChange={this.handleGroupName}/>
@@ -45,6 +48,7 @@ class AddGroupWindow extends React.Component {
                         <div id="color-input-container">
                             <label htmlFor="color-input">color: 
                                 <input 
+                                value={this.state.color}
                                 type="color"
                                 name="color-input"
                                 onChange={this.handleGroupColor}/>

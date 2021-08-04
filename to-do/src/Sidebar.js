@@ -1,4 +1,6 @@
 import React from 'react';
+import DeleteBtn from './images/delete_icon.svg';
+import EditBtn from './images/edit_icon.svg';
 
 const Sidebar = ({removeTask, tasks, page}) => {
     if(page === "recent") {
@@ -23,13 +25,14 @@ const Sidebar = ({removeTask, tasks, page}) => {
                                     <p id="sidebar-item-group">{task.group}</p>
 
                                     <div
+                                    id="sidebar-item-edit-btn">
+                                        <img src={EditBtn}></img>  
+                                    </div>
+                                    
+                                    <div
                                     id="sidebar-item-remove-btn"
                                     onClick={() => {removeTask(task.id)}}>
-                                        <img src={"images/delete_black_24dp.svg"}></img>
-                                    </div>
-                                    <div
-                                    id="sidebar-item-edit-btn">
-                                        [edit]
+                                        <img src={DeleteBtn}></img>
                                     </div>
                                 </div>
                             </div>

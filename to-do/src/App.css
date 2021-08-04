@@ -116,10 +116,10 @@ body {
     margin: .5em 0;
 }
 #sidebar-item-remove-btn {
-    margin-left: auto;
+    margin-right: .5em;
 }
 #sidebar-item-edit-btn {
-    margin-right: .5em;
+    margin-left: auto;
 }
 
 /* =============================================== */

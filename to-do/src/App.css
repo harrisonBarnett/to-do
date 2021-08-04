@@ -111,6 +111,7 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
+    margin-left: auto;
 }
 #sidebar-item-group {
     margin: .5em 0;
@@ -118,7 +119,7 @@ body {
 #sidebar-item-remove-btn {
     margin: 0 .5em;
 }
-#sidebar-item-edit-btn {
+.edit-task-modal-container {
     margin-left: auto;
 }
 #sidebar-item-remove-btn,
@@ -184,8 +185,9 @@ body {
 .display-none {
     display: none;
 }
-/* add group modals */
-.add-group-window {
+/* add group / edit task modals */
+.add-group-window,
+.edit-task-window {
     position: fixed;
     top: 0;
     right: 0;
@@ -195,7 +197,8 @@ body {
     cursor: default;
     background: rgba(0, 0, 0, .5);
 }
-.add-group-window-content {
+.add-group-window-content,
+.edit-task-window-content {
     position: fixed;
     z-index: 3;
     top: 50%;
@@ -210,27 +213,31 @@ body {
     color: var(--accent-color-100);
     box-shadow: 1px 1px 8px rgba(0,0,0,.5);
 }
-#add-group-form {
+#add-group-form,
+#edit-task-form {
     margin-left: 1em;;
     display: flex;
     flex-direction: column;
 }
 #add-group-form input,
-#add-group-form button {
+#edit-task-form input {
     outline: none;
     border: none;
 }
-#add-group-close-btn {
+#add-group-close-btn,
+#edit-task-close-btn {
     width: 20px;
     height: 20px;
     display: grid;
     align-content: center;
     margin: .5em .5em 0 auto;
 }
-#add-group-submit-button {
+#add-group-submit-button,
+#edit-task-submit-button {
     margin: 0 .5em .5em 0;
 }
-#add-group-form input {
+#add-group-form input,
+#edit-task-form input {
     margin-left: 1em;
 }
 #add-group-form input[type=color] {
@@ -244,14 +251,16 @@ body {
     align-items: center;
     margin-bottom: 1em;
 }
-.add-group-window-content button {
+.add-group-window-content button,
+.edit-task-window-content button {
     width: 75px;
     padding: .25em .25em;
     border: none;
     outline: none;
     cursor: pointer;
 }
-#add-group-window-control {
+#add-group-window-control,
+#edit-task-window-control {
     position: absolute;
     top: 0;
     right: 0;
@@ -260,5 +269,6 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+
 
 /* =============================================== */

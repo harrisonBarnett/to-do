@@ -85,8 +85,8 @@ class App extends React.Component {
     });
   }
 
-  editTask(content) {
-    console.log(content);
+  editTask(id) {
+    console.log("id: " + id);
   }
 
   addGroup(id, name, color) {

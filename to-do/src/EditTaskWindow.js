@@ -27,15 +27,15 @@ class EditTaskWindow extends React.Component {
     }
 
     render() {
-        const modalClassName = this.props.show ? "add-group-window display-block" : "add-group-window display-none";
+        const modalClassName = this.props.show ? "edit-task-window display-block" : "edit-task-window display-none";
 
         return (
             <div
             className={modalClassName}>
-                <div className="add-group-window-content">
+                <div className="edit-task-window-content">
     
-                    <div id="add-group-form">
-                        <h2>form a group</h2>
+                    <div id="edit-task-form">
+                        <h2>change your mind?</h2>
                         <div id="group-input-container">
                             <label htmlFor="group-input">group: 
                                 <input
@@ -56,18 +56,18 @@ class EditTaskWindow extends React.Component {
                         </div>  
                     </div>
     
-                    <div id="add-group-window-control">
+                    <div id="edit-task-window-control">
                         <button
                         type="button"
-                        id="add-group-close-btn"
+                        id="edit-task-close-btn"
                         onClick={this.props.closeBtn}>
                             x
                         </button>
     
                         <button
                         type="button"
-                        id="add-group-submit-button"
-                        onClick={this.handleGroupSubmit}>
+                        id="edit-task-submit-button"
+                        onClick={() => {this.props.editTask(this.props.id)}}>
                             submit
                         </button>
                     </div>

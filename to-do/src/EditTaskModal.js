@@ -1,5 +1,7 @@
 import EditTaskWindow from './EditTaskWindow';
 import React from 'react';
+import EditBtn from './images/edit_icon.svg';
+
 
 class EditTaskModal extends React.Component {
     constructor(props) {
@@ -19,13 +21,17 @@ class EditTaskModal extends React.Component {
 
     render() {
         return(
-            <div className="add-group-modal-container">
+            <div className="edit-task-modal-container">
                 <div
-                className="add-group-button"
+                id="sidebar-item-edit-btn"
                 onClick={this.showModal}>
-                    + add
+                    <img 
+                    src={EditBtn}
+                    alt="edit button"></img>  
                 </div>
                 <EditTaskWindow 
+                id={this.props.id}
+                editTask={this.props.editTask}
                 show={this.state.show}
                 closeBtn={this.hideModal}
                 addGroup={this.props.addGroup}/>

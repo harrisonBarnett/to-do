@@ -1,6 +1,6 @@
 import React from 'react';
 import DeleteBtn from './images/delete_icon.svg';
-import EditBtn from './images/edit_icon.svg';
+import EditTaskModal from './EditTaskModal'
 
 const Sidebar = ({removeTask, editTask, tasks, page}) => {
     if(page === "recent") {
@@ -24,13 +24,9 @@ const Sidebar = ({removeTask, editTask, tasks, page}) => {
                                 <div id="sidebar-item-control">
                                     <p id="sidebar-item-group">{task.group}</p>
 
-                                    <div
-                                    id="sidebar-item-edit-btn"
-                                    onClick={() => {editTask(task.content)}}>
-                                        <img 
-                                        src={EditBtn}
-                                        alt="edit button"></img>  
-                                    </div>
+                                    <EditTaskModal
+                                    editTask={editTask}
+                                    id={task.id}/>
                                     
                                     <div
                                     id="sidebar-item-remove-btn"
@@ -70,13 +66,9 @@ const Sidebar = ({removeTask, editTask, tasks, page}) => {
                                 <div id="sidebar-item-control">
                                     <p id="sidebar-item-group">{filteredTask.group}</p>
 
-                                    <div
-                                    id="sidebar-item-edit-btn"
-                                    onClick={() => {editTask(filteredTask.content)}}>
-                                        <img 
-                                        src={EditBtn}
-                                        alt="edit button"></img>  
-                                    </div>
+                                    <EditTaskModal
+                                    editTask={editTask}
+                                    id={filteredTask.id}/>
                                     
                                     <div
                                     id="sidebar-item-remove-btn"

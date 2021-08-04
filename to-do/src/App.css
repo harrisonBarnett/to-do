@@ -56,7 +56,7 @@ body {
     display: flex;
 }
 .group-bar li{
-    padding: 0 1em;
+    padding: .5em 1em;
     margin: 0 2px;
     display: flex;
     align-items: center;
@@ -116,10 +116,14 @@ body {
     margin: .5em 0;
 }
 #sidebar-item-remove-btn {
-    margin-right: .5em;
+    margin: 0 .5em;
 }
 #sidebar-item-edit-btn {
     margin-left: auto;
+}
+#sidebar-item-remove-btn,
+#sidebar-item-edit-btn {
+    cursor: pointer;
 }
 
 /* =============================================== */
@@ -215,6 +219,16 @@ body {
 #add-group-form button {
     outline: none;
     border: none;
+}
+#add-group-close-btn {
+    width: 20px;
+    height: 20px;
+    display: grid;
+    align-content: center;
+    margin: .5em .5em 0 auto;
+}
+#add-group-submit-button {
+    margin: 0 .5em .5em 0;
 }
 #add-group-form input {
     margin-left: 1em;

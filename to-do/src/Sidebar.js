@@ -2,7 +2,7 @@ import React from 'react';
 import DeleteBtn from './images/delete_icon.svg';
 import EditBtn from './images/edit_icon.svg';
 
-const Sidebar = ({removeTask, tasks, page}) => {
+const Sidebar = ({removeTask, editTask, tasks, page}) => {
     if(page === "recent") {
         return (
             <div
@@ -25,14 +25,19 @@ const Sidebar = ({removeTask, tasks, page}) => {
                                     <p id="sidebar-item-group">{task.group}</p>
 
                                     <div
-                                    id="sidebar-item-edit-btn">
-                                        <img src={EditBtn}></img>  
+                                    id="sidebar-item-edit-btn"
+                                    onClick={() => {editTask(task.content)}}>
+                                        <img 
+                                        src={EditBtn}
+                                        alt="edit button"></img>  
                                     </div>
                                     
                                     <div
                                     id="sidebar-item-remove-btn"
                                     onClick={() => {removeTask(task.id)}}>
-                                        <img src={DeleteBtn}></img>
+                                        <img 
+                                        src={DeleteBtn}
+                                        alt="delete button"></img>
                                     </div>
                                 </div>
                             </div>
@@ -59,15 +64,30 @@ const Sidebar = ({removeTask, tasks, page}) => {
                             style={{background: filteredTask.color}}></div>
                             
                             <div id="sidebar-item-content-container">
-                                <p id="sidebar-item-date">{filteredTask.date}</p>
+                            <p id="sidebar-item-date">{filteredTask.date}</p>
                                 <p id="sidebar-item-content">{filteredTask.content}</p>
-                                <p id="sidebar-item-group">{filteredTask.group}</p>
+
+                                <div id="sidebar-item-control">
+                                    <p id="sidebar-item-group">{filteredTask.group}</p>
+
+                                    <div
+                                    id="sidebar-item-edit-btn"
+                                    onClick={() => {editTask(filteredTask.content)}}>
+                                        <img 
+                                        src={EditBtn}
+                                        alt="edit button"></img>  
+                                    </div>
+                                    
+                                    <div
+                                    id="sidebar-item-remove-btn"
+                                    onClick={() => {removeTask(filteredTask.id)}}>
+                                        <img 
+                                        src={DeleteBtn}
+                                        alt="delete button"></img>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div id="sidebar-item-control">
-                                <button>x</button>
-                                <button>[edit]</button>
-                            </div>
                         </li>
                         )}              
                 </ul>

@@ -16,7 +16,7 @@ class GroupBar extends React.Component {
                         </li>
 
                     {this.props.groups.map(group => 
-                        
+
                             <li
                             className="group-bar-tab"
                             id={"group-bar-tab-"+group.name}

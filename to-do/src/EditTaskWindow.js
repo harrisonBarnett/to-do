@@ -16,10 +16,10 @@ class EditTaskWindow extends React.Component {
         this.handleGroup = this.handleGroup.bind(this);
     };
     handleContent(event) {
-        this.setState({name: event.target.value});
+        this.setState({content: event.target.value});
     };
     handleDate(event) {
-        this.setState({color: event.target.value});
+        this.setState({date: event.target.value});
     };
     handleGroup(event) {
         this.setState({color: event.target.value,
@@ -27,7 +27,7 @@ class EditTaskWindow extends React.Component {
     }
     handleEditTaskSubmit(event) {
         event.preventDefault();
-        this.props.editTask(this.props.content);
+        this.props.editTask(this.props.id, this.state.content, this.state.date, this.state.group, this.state.color);
         this.props.closeBtn();
     }
 

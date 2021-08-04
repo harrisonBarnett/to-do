@@ -85,8 +85,22 @@ class App extends React.Component {
     });
   }
 
-  editTask(content) {
+  editTask(id, content, date, group, color) {
+    console.log("id: " + id)
     console.log("content: " + content);
+    console.log("date: " + date);
+    console.log("group: " + group);
+    console.log("color: " + color);
+
+    this.removeTask(id);
+
+    var tasks = [...this.state.tasks];
+    var index = tasks.findIndex(obj => obj.id === id);
+    tasks[index].content = content;
+    tasks[index].date = date;
+    tasks[index].group = group;
+    tasks[index].color = color;
+    this.setState({tasks});
   }
 
   addGroup(id, name, color) {

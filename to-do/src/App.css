@@ -93,6 +93,7 @@ body {
 }
 /* sidebar item styles */
 .sidebar-item {
+    width: 100%;
     margin: 1em 0;
     display: flex;
     background: var(--primary-color-100);
@@ -103,13 +104,22 @@ body {
     width: 15px;
 }
 #sidebar-item-content-container {
+    width: 100%;
     margin-left: 10px;
 }
 #sidebar-item-control {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+}
+#sidebar-item-group {
+    margin: .5em 0;
+}
+#sidebar-item-remove-btn {
     margin-left: auto;
+}
+#sidebar-item-edit-btn {
+    margin-right: .5em;
 }
 
 /* =============================================== */

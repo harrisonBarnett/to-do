@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Sidebar = ({tasks, page}) => {
+const Sidebar = ({removeTask, tasks, page}) => {
     if(page === "recent") {
         return (
             <div
@@ -18,13 +18,23 @@ const Sidebar = ({tasks, page}) => {
                             <div id="sidebar-item-content-container">
                                 <p id="sidebar-item-date">{task.date}</p>
                                 <p id="sidebar-item-content">{task.content}</p>
-                                <p id="sidebar-item-group">{task.group}</p>
+
+                                <div id="sidebar-item-control">
+                                    <p id="sidebar-item-group">{task.group}</p>
+
+                                    <div
+                                    id="sidebar-item-remove-btn"
+                                    onClick={() => {removeTask(task.id)}}>
+                                        <img src={"images/delete_black_24dp.svg"}></img>
+                                    </div>
+                                    <div
+                                    id="sidebar-item-edit-btn">
+                                        [edit]
+                                    </div>
+                                </div>
                             </div>
 
-                            <div id="sidebar-item-control">
-                                <button>x</button>
-                                <button>[edit]</button>
-                            </div>
+                            
                         </li>
                     )}                   
                 </ul>

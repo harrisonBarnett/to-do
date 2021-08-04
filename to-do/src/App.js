@@ -44,6 +44,7 @@ class App extends React.Component {
     };
     this.swapTab = this.swapTab.bind(this);
     this.addTask = this.addTask.bind(this);
+    this.removeTask = this.removeTask.bind(this);
     this.addGroup = this.addGroup.bind(this);
   };
 
@@ -77,6 +78,12 @@ class App extends React.Component {
     this.setState({ id: newID});
   }
 
+  removeTask(id) {
+    this.setState({
+      tasks: this.state.tasks.filter(task => task.id != id)
+    });
+  }
+
   addGroup(id, name, color) {
     let newID = this.state.id;
 
@@ -102,6 +109,7 @@ class App extends React.Component {
         addGroup={this.addGroup}
         groups={this.state.groups}/>
         <Sidebar 
+        removeTask={this.removeTask}
         tasks={this.state.tasks}
         page={this.state.page}/>
         <Content 

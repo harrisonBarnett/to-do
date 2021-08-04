@@ -5,24 +5,29 @@ class EditTaskWindow extends React.Component {
         super(props);
         this.state = {
             id: "",
-            name: "",
+            content: "",
+            date: "",
+            group: "",
             color: ""
         }
-        this.handleGroupSubmit = this.handleGroupSubmit.bind(this);
-        this.handleGroupName = this.handleGroupName.bind(this);
-        this.handleGroupColor = this.handleGroupColor.bind(this);
+        this.handleEditTaskSubmit = this.handleEditTaskSubmit.bind(this);
+        this.handleContent = this.handleContent.bind(this);
+        this.handleDate = this.handleDate.bind(this);
+        this.handleGroup = this.handleGroup.bind(this);
     };
-    handleGroupName(event) {
+    handleContent(event) {
         this.setState({name: event.target.value});
     };
-    handleGroupColor(event) {
+    handleDate(event) {
         this.setState({color: event.target.value});
     };
-
-    handleGroupSubmit(event) {
+    handleGroup(event) {
+        this.setState({color: event.target.value,
+            group: event.target.options[event.target.selectedIndex].text})
+    }
+    handleEditTaskSubmit(event) {
         event.preventDefault();
-        this.props.addGroup(this.state.id, this.state.name, this.state.color);
-        this.setState({id: "", name: "", color: ""})
+        this.props.editTask(this.props.content);
         this.props.closeBtn();
     }
 
@@ -36,24 +41,50 @@ class EditTaskWindow extends React.Component {
     
                     <div id="edit-task-form">
                         <h2>change your mind?</h2>
-                        <div id="group-input-container">
-                            <label htmlFor="group-input">group: 
+                        <div id="task-input-container">
+                            <label htmlFor="task-input">task: 
                                 <input
-                                value={this.state.name} 
+                                value={this.state.name}
+                                placeholder={this.props.content} 
                                 type="text"
-                                name="group-input"
-                                onChange={this.handleGroupName}/>
+                                name="task-input"
+                                onChange={this.handleContent}/>
                             </label>
                         </div>
-                        <div id="color-input-container">
-                            <label htmlFor="color-input">color: 
-                                <input 
-                                value={this.state.color}
-                                type="color"
-                                name="color-input"
-                                onChange={this.handleGroupColor}/>
-                            </label>
-                        </div>  
+
+                        <div id="date-input-container">
+                            <label htmlFor="date-input">due: </label>
+                            <input 
+                            value={this.state.date}
+                            type="date"
+                            name="date-input"
+                            onChange={this.handleDate}>
+                            </input>
+                        </div>
+
+                        <div id="group-input-container">
+                            <label htmlFor="add-task-groups-dropdown">group: </label>
+                            <select                         
+                            name="add-task-groups-dropdown" 
+                            onChange={this.handleGroup}>
+                                <option 
+                                disabled
+                                selected={true}> 
+                                -- select an option -- 
+                                </option>
+
+                                {this.props.groups.map(group => 
+                                    <option
+                                    // color is passed as value of each option
+                                    value={group.color}
+                                    key={group.id}>
+                                    {group.name}
+                                    </option>    
+                                    )}
+
+                            </select>
+                        </div>
+                        
                     </div>
     
                     <div id="edit-task-window-control">
@@ -67,7 +98,7 @@ class EditTaskWindow extends React.Component {
                         <button
                         type="button"
                         id="edit-task-submit-button"
-                        onClick={() => {this.props.editTask(this.props.id)}}>
+                        onClick={this.handleEditTaskSubmit}>
                             submit
                         </button>
                     </div>

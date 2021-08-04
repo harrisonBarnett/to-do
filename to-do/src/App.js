@@ -85,8 +85,8 @@ class App extends React.Component {
     });
   }
 
-  editTask(id) {
-    console.log("id: " + id);
+  editTask(content) {
+    console.log("content: " + content);
   }
 
   addGroup(id, name, color) {
@@ -117,6 +117,7 @@ class App extends React.Component {
         removeTask={this.removeTask}
         editTask={this.editTask}
         tasks={this.state.tasks}
+        groups={this.state.groups}
         page={this.state.page}/>
         <Content 
         addTask={this.addTask}

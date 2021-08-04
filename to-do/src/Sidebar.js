@@ -2,7 +2,7 @@ import React from 'react';
 import DeleteBtn from './images/delete_icon.svg';
 import EditTaskModal from './EditTaskModal'
 
-const Sidebar = ({removeTask, editTask, tasks, page}) => {
+const Sidebar = ({removeTask, editTask, tasks, page, groups}) => {
     if(page === "recent") {
         return (
             <div
@@ -26,7 +26,11 @@ const Sidebar = ({removeTask, editTask, tasks, page}) => {
 
                                     <EditTaskModal
                                     editTask={editTask}
-                                    id={task.id}/>
+                                    id={task.id}
+                                    content={task.content}
+                                    group={task.group}
+                                    color={task.color}
+                                    groups={groups}/>
                                     
                                     <div
                                     id="sidebar-item-remove-btn"
@@ -68,7 +72,11 @@ const Sidebar = ({removeTask, editTask, tasks, page}) => {
 
                                     <EditTaskModal
                                     editTask={editTask}
-                                    id={filteredTask.id}/>
+                                    id={filteredTask.id}
+                                    content={filteredTask.content}
+                                    group={filteredTask.group}
+                                    color={filteredTask.color}
+                                    groups={groups}/>
                                     
                                     <div
                                     id="sidebar-item-remove-btn"

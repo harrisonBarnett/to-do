@@ -30,7 +30,11 @@ class EditTaskModal extends React.Component {
                     alt="edit button"></img>  
                 </div>
                 <EditTaskWindow 
+                groups={this.props.groups}
                 id={this.props.id}
+                content={this.props.content}
+                group={this.props.group}
+                color={this.props.color}
                 editTask={this.props.editTask}
                 show={this.state.show}
                 closeBtn={this.hideModal}

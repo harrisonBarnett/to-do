@@ -12,12 +12,13 @@ class GroupBar extends React.Component {
                     className="group-bar-tab-active"
                     id="group-bar-tab-recent"
                     onClick = {() => this.props.swapTab("recent")}>
-                        recent
+                        tasks
                         </li>
 
                     {this.props.groups.map(group => 
 
                             <li
+                            value={group.color}
                             className="group-bar-tab"
                             id={"group-bar-tab-"+group.name}
                             key={"group-bar-tab-"+group.id}

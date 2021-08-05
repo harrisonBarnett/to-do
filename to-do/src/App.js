@@ -26,17 +26,17 @@ class App extends React.Component {
       tasks : [
         {id: 1,
         content: "pick up drycleaning",
-        date: "7/27/21",
+        date: "2021-07-27",
         group: "work",
         color: "red"},
         {id: 2,
         content: "eat a bug",
-        date: "7/30/21",
+        date: "2021-07-30",
         group: "school",
         color: "green"},
         {id: 3,
         content: "ipsum dolor sit amet",
-        date: "7/27/33",
+        date: "2021-07-31",
         group: "work",
         color: "red"},
       ],
@@ -54,6 +54,7 @@ class App extends React.Component {
     prevTab.classList.remove("group-bar-tab-active");
     
     const nextTab = document.getElementById("group-bar-tab-" + tabName);
+    const color = nextTab.nodeValue;
     nextTab.classList.add("group-bar-tab-active");
     this.setState({
       page: tabName

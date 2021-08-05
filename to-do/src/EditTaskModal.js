@@ -27,7 +27,8 @@ class EditTaskModal extends React.Component {
                 onClick={this.showModal}>
                     <img 
                     src={EditBtn}
-                    alt="edit button"></img>  
+                    alt="edit button"
+                    height="15"></img>  
                 </div>
                 <EditTaskWindow 
                 groups={this.props.groups}

@@ -80,7 +80,9 @@ class Content extends React.Component {
 
                         </select>
                     </div>            
-                    <button onClick={this.handleTaskSubmit}>
+                    <button
+                    id="content-task-submit-btn"
+                    onClick={this.handleTaskSubmit}>
                         submit
                     </button>
                 </div>

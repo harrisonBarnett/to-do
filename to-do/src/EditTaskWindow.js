@@ -42,18 +42,19 @@ class EditTaskWindow extends React.Component {
                     <div id="edit-task-form">
                         <h2>change your mind?</h2>
                         <div id="task-input-container">
-                            <label htmlFor="task-input">task: 
+                            <label htmlFor="task-input">task:</label>
                                 <input
                                 value={this.state.name}
                                 placeholder={this.props.content} 
                                 type="text"
                                 name="task-input"
-                                onChange={this.handleContent}/>
-                            </label>
+                                onChange={this.handleContent}>
+                                </input>
+                            
                         </div>
 
                         <div id="date-input-container">
-                            <label htmlFor="date-input">due: </label>
+                            <label htmlFor="date-input">due:</label>
                             <input 
                             value={this.state.date}
                             type="date"
@@ -63,7 +64,7 @@ class EditTaskWindow extends React.Component {
                         </div>
 
                         <div id="group-input-container">
-                            <label htmlFor="add-task-groups-dropdown">group: </label>
+                            <label htmlFor="add-task-groups-dropdown">group:</label>
                             <select                         
                             name="add-task-groups-dropdown" 
                             onChange={this.handleGroup}>

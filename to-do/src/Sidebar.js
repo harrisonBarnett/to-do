@@ -84,7 +84,8 @@ const Sidebar = ({removeTask, editTask, tasks, page, groups}) => {
                                     onClick={() => {removeTask(filteredTask.id)}}>
                                         <img 
                                         src={DeleteBtn}
-                                        alt="delete button"></img>
+                                        alt="delete button"
+                                        height="15"></img>
                                     </div>
                                 </div>
                             </div>

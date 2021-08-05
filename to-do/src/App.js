@@ -47,7 +47,7 @@ class App extends React.Component {
     this.removeTask = this.removeTask.bind(this);
     this.editTask = this.editTask.bind(this);
     this.addGroup = this.addGroup.bind(this);
-  };
+  }
 
   swapTab(tabName) {   
     const prevTab = document.getElementsByClassName("group-bar-tab-active")[0];
@@ -87,7 +87,7 @@ class App extends React.Component {
   }
 
   editTask(id, content, date, group, color) {
-    console.log("id: " + id)
+    console.log("id: " + id);
     console.log("content: " + content);
     console.log("date: " + date);
     console.log("group: " + group);

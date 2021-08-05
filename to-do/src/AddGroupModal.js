@@ -9,10 +9,10 @@ class AddGroupModal extends React.Component {
         };
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
-    };
+    }
     showModal = () => {
         this.setState({show: true});
-    };
+    }
     hideModal = () => {
         this.setState({show: false});
     };
